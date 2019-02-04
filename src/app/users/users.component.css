@@ -1,0 +1,14 @@
+label {
+    display: right;
+    font: 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: 20px;
+}
+
+.note {
+    font-size: 20px;
+}
+
