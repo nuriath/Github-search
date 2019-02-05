@@ -4,5 +4,4 @@ export class User {
         public followers:number,
         public following:number){}
 
-    
 }
