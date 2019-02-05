@@ -1,14 +1,16 @@
 <div class="container">
 <h1>Github Users</h1>
-<label id="user">User Name</label>
-<input type="search" id="site-search" placeholder="Username">
-<div><button >Search</button>
+<label id="user"></label>
+<input type="search" id="site-search" placeholder="Username" [(ngModel)]="userName">
+<button (click)='search(i)'>Search</button>
 </div>
 
 <blockquote>
-    <p>{{user.avatar_url}} <img src="https://avatars3.githubusercontent.com/u/439365?v=4"></p>
-    <p>Name{{user.name}}</p>
-    <!-- <p>{{user.public_repos}}</p> -->
-    <p>{{user.followers}}</p>
-    <p>{{user.following}}</p>
-    <a href="{{search.html_url}}" target="_blank" href="https://api.github.com/users/daneden/repos">Link to the github page</a>
+<blockquote>
+    <img src="{{user.avatar_url}}">
+    <p>Name: {{user.name}}</p>
+    <p>Repositories:{{user.public_repos}}</p>
+    <p>Following: {{user.following}}</p>
+    <p>Followers: {{user.followers}}</p>
+    <p><a href="{{user.html_url}}" target="_blank" >Link to the github page</a></p>
+</blockquote>

@@ -12,7 +12,7 @@ export class UserRequestService {
      user:User;
 
    constructor(private http:HttpClient) { 
-       this.user=new User("","",0,0);
+       this.user=new User("","",0,0,0,"");
     }
     userRequest(){
 
@@ -21,14 +21,18 @@ export class UserRequestService {
           following:number;
           followers:number;
           avatar_url:string;
+          public_repos:number,
+          html_url:string;
       }
       let promise =new Promise((resolve,reject)=>{
-        this.http.get<ApiResponse>('https://api.github.com/users/daneden?access_token=' + environment.apiKey).toPromise().then(response=>{
+        this.http.get<ApiResponse>('https://api.github.com/users/daneden?access_token=').toPromise().then(response=>{
             
-            this.user.name=response.name
-            this.user.following=response.following
-            this.followers=response.followers
-            this.avatar_url=respose.avatar_url
+            this.user.name=response.name,
+            this.user.avatar_url=response.avatar_url,
+            this.user.followers=response.followers,
+            this.user.following=response.following,
+            this.user.public_repos=response.public_repos,
+            this.user.html_url=response.html_url,
             
   
             resolve();
