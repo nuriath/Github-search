@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { User} from "../user";
-import {Repository} from "../repository";
 import {HttpClient} from '@angular/common/http';
 import { SelectorMatcher } from '@angular/compiler';
-
+import { UserRequestService} from '../users/user.service';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
+  providers:[UserRequestService],
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
@@ -16,40 +16,14 @@ export class UsersComponent implements OnInit {
   // repository:Repository;
 
   constructor
-   (private http:HttpClient) { 
+   (private userService:UserRequestService) { 
     
   }
 
 
   ngOnInit() {
-
-    interface ApiRespose{
-      name:string;
-      avatar_url:string;
-      followers:number;
-      following:number;
-      public_repos:number;
-      html_url:string;
-
-    }
-
+    this.userService.userRequest()
+    this.user=this.userService.user
    
-    this.http.get("https://api.github.com/users/daneden").subscribe(data=>{
-      this.user=new User(data.name, data.avatar_url, data.followers, data.following,  data.public_repos,data.html_url)
-      // this.repository=new Repository(data.url, data.repo_url)
-    
-    })
-   
-  }
-  Search(){
-    // if (this.user != "")
-      // else if (this.user == ""){
-      //   this.ngOnInit();
-      // }
-    
-    this.user=this.user; res=>{
-      return res.newUser()
-    }
-  }
 }
-
+}
