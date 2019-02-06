@@ -12,7 +12,8 @@ Mwangaza Nuriath,
 
 ## Description
 
-This is an angular application which we can 
+This is an angular application which we can search a user on github ,
+You can be able of seeing his repositories and his followers and his following.
 
 
 ## Code scaffolding
@@ -30,7 +31,7 @@ E-mail:mnuriath@gmail.com
 
 ## Relative link:
 
-[a relative link] (other_file.md)
+[a relative link] 
 
 ##License & Copyright
 (c) Mwangaza Nuriath, MIT License 2019.
