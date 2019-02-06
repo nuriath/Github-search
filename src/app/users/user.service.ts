@@ -15,7 +15,8 @@ export class UserRequestService {
    constructor(private http:HttpClient) { 
        this.user=new User("","",0,0,0,"");
     }
-    userRequest(){
+    userRequest(userName){
+      var userInput =userName;
 
       interface ApiResponse{
           name:string;
@@ -26,7 +27,7 @@ export class UserRequestService {
           html_url:string;
       }
       let promise =new Promise((resolve,reject)=>{
-        this.http.get<ApiResponse>('https://api.github.com/users/nuriath').toPromise().then(response=>{
+        this.http.get<ApiResponse>('https://api.github.com/users/' + userInput).toPromise().then(response=>{
             
             this.user.name=response.name,
             this.user.avatar_url=response.avatar_url,
