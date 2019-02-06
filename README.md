@@ -31,7 +31,7 @@ E-mail:mnuriath@gmail.com
 
 ## Relative link:
 
-[a relative link] 
+https://github.com/nuriath/Github-search 
 
 ##License & Copyright
 (c) Mwangaza Nuriath, MIT License 2019.
