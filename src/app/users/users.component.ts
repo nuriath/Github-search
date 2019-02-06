@@ -13,13 +13,17 @@ import { UserRequestService} from '../users/user.service';
 export class UsersComponent implements OnInit {
 
   user:User;
-  // repository:Repository;
+  userName="";
 
+  submit(){
+    
+  }
   constructor
    (private userService:UserRequestService) { 
     
-  }
 
+  }
+  
 
   ngOnInit() {
     this.userService.userRequest()

@@ -26,7 +26,7 @@ export class UserRequestService {
           html_url:string;
       }
       let promise =new Promise((resolve,reject)=>{
-        this.http.get<ApiResponse>('https://api.github.com/users/daneden').toPromise().then(response=>{
+        this.http.get<ApiResponse>('https://api.github.com/users/nuriath').toPromise().then(response=>{
             
             this.user.name=response.name,
             this.user.avatar_url=response.avatar_url,
@@ -38,7 +38,7 @@ export class UserRequestService {
   
             resolve();
         }, error=>{
-          this.user.name="Never, never, never give up."
+          this.user.name="never give up!!!"
           this.user.following=0
           reject(error)
       }
